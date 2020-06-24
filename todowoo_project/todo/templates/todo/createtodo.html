@@ -1,0 +1,15 @@
+<h1>craete</h1>
+{% extends 'todo/base.html'%}
+
+{%block content%}
+
+
+<P> {{error}} </P>
+
+<form method="POST">
+    {% csrf_token %}
+    <p>{{ form }}</p>
+    <button type="submit">submit</button>
+
+</form>
+{%endblock%}

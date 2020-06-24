@@ -1,0 +1,21 @@
+{% extends 'todo/base.html'%}
+
+{%block content%}
+<h1>current todos</h1>
+
+<ul>
+    {%for todo in todos%}
+    <li>
+       <h2> <a href="{% url 'viewtodo'  todo.id  %}">
+        {%if todo.importent%}<b>{%endif%} {{todo.title}}{%if todo.importent%}</b>{%endif%}
+        {%if todo.memo%}
+        <br>
+        {{todo.memo}}
+        {%endif%}
+    </a></h2>
+    </li>
+    {%endfor%}
+</ul>
+
+
+{%endblock%}
